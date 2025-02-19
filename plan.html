@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Plans</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #7c3aed;
+            --dark: #1e293b;
+            --light: #f8fafc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--light) 50%, #e2e8f0 50%);
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            padding: 2rem;
+        }
+
+        .plan-switcher {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .toggle-container {
+            display: inline-flex;
+            background: #fff;
+            padding: 0.5rem;
+            border-radius: 50px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+            position: relative;
+        }
+
+        .toggle-bg {
+            position: absolute;
+            width: 50%;
+            height: 80%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 40px;
+            transition: all 0.3s ease;
+            top: 10%;
+        }
+
+        .toggle-btn {
+            padding: 1rem 2.5rem;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            position: relative;
+            z-index: 1;
+            font-weight: 600;
+            color: var(--dark);
+            transition: color 0.3s ease;
+        }
+
+        .toggle-btn.active {
+            color: white;
+        }
+
+        .plans-container {
+            display: flex; /* Flexbox for horizontal layout */
+            justify-content: center; /* Centering the plans */
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .plan-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            width: 300px; /* Fixed width for better spacing */
+        }
+
+        .plan-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .plan-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+
+        .plan-card.recommended {
+            border: 2px solid var(--primary);
+            transform: scale(1.05);
+        }
+
+        .plan-card.recommended:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+
+        .plan-price {
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 1.5rem 0;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .plan-features {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .plan-features li {
+            padding: 0.8rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .plan-features li::before {
+            content: '✓';
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .plans-container {
+                flex-direction: column; /* Stack plans vertically on smaller screens */
+            }
+
+            .plan-card.recommended {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="plan-switcher">
+        <h1>Choose Your Plan</h1>
+        <div class="toggle-container">
+            <div class="toggle-bg" id="toggleBg"></div>
+            <button class="toggle-btn active" data-plan="monthly">Monthly</button>
+            <button class="toggle-btn" data-plan="yearly">Yearly</button>
+        </div>
+
+        <div class="plans-container">
+            <div class="plan-card">
+                <h2>Starter</h2>
+                <div class="plan-price monthly">$19<span>/mo</span></div>
+                <div class="plan-price yearly">$199<span>/yr</span></div>
+                <ul class="plan-features">
+                    <li>Up to 5 Projects</li>
+                    <li>Basic Analytics</li>
+                    <li>Email Support</li>
+                    <li>1 User Account</li>
+                </ul>
+                <a href="#" class="btn">Get Started</a>
+            </div>
+
+            <div class="plan-card recommended">
+                <h2>Professional</h2>
+                <div class="plan-price monthly">$49<span>/mo</span></div>
+                <div class="plan-price yearly">$499<span>/yr</span></div>
+                <ul class="plan-features">
+                    <li>Unlimited Projects</li>
+                    <li>Advanced Analytics</li>
+                    <li>Priority Support</li>
+                    <li>5 User Accounts</li>
+                    <li>API Access</li>
+                </ul>
+                <a href="#" class="btn">Get Started</a>
+            </div>
+
+            <div class="plan-card">
+                <h2>Enterprise</h2>
+                <div class="plan-price monthly">$99<span>/mo</span></div>
+                <div class="plan-price yearly">$999<span>/yr</span></div>
+                <ul class="plan-features">
+                    <li>Unlimited Projects</li>
+                    <li>Advanced Analytics</li>
+                    <li>24/7 Support</li>
+                    <li>Unlimited Users</li>
+                    <li>Custom Solutions</li>
+                </ul>
+                <a href="#" class="btn">Contact Sales</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const toggleBtns = document.querySelectorAll('.toggle-btn');
+        const toggleBg = document.getElementById('toggleBg');
+        const monthlyPrices = document.querySelectorAll('.monthly');
+        const yearlyPrices = document.querySelectorAll('.yearly');
+
+        toggleBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Toggle active class
+                toggleBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Move toggle background
+                const isYearly = btn.dataset.plan === 'yearly';
+                toggleBg.style.transform = `translateX(${isYearly ? '100%' : '0'})`;
+                
+                // Show/hide prices
+                monthlyPrices.forEach(p => p.style.display = isYearly ? 'none' : 'block');
+                yearlyPrices.forEach(p => p.style.display = isYearly ? 'block' : 'none');
+                
+                // Update recommended card scaling
+                document.querySelector('.recommended').style.transform = 
+                    isYearly ? 'scale(1.05)' : 'scale(1.05)';
+            });
+        });
+    </script>
+</body>
+</html>

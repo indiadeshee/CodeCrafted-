@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional web development and digital solutions">
+    <meta name="keywords" content="web development, digital marketing, mobile apps, SEO services">
+    <title>CodeCrafted | Digital Solutions</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #3b82f6;
+            --accent-color: #60a5fa;
+            --light-bg: #f8fafc;
+            --text-color: #1e293b;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: var(--text-color);
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            color: var(--primary-color) !important;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        .nav-link {
+            color: var(--text-color) !important;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
+                        url('https://source.unsplash.com/1920x1080/?coding') center/cover;
+            padding: 120px 0;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        /* About Us Section */
+        #about {
+            background-color: #f3f4f6;
+            padding: 80px 0;
+        }
+
+        .about-text {
+            font-size: 1.25rem;
+            color: var(--text-color);
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .about-header {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .about-image {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .about-card {
+            border: none;
+            background-color: var(--light-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Services Section */
+        .service-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-color);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--light-bg);
+            border-top: 1px solid #e2e8f0;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">CodeCrafted</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container text-center" data-aos="fade-up">
+            <h1 class="mb-4">Transform Your Digital Presence</h1>
+            <p class="lead mb-4">Professional web solutions for modern businesses</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary btn-lg px-5">Get Started</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="about-header">About Us</h2>
+                <p class="text-muted">Learn more about our mission and values</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6" data-aos="fade-right">
+                    <div class="about-card">
+                        <h4>Our Mission</h4>
+                        <p class="about-text">
+                            At CodeCrafted, our mission is to empower businesses with custom web solutions and digital strategies that drive growth and success in an ever-evolving digital world.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6" data-aos="fade-left">
+                    <div class="about-card">
+                        <h4>Our Values</h4>
+                        <p class="about-text">
+                            We are committed to delivering high-quality products with a focus on user-centered design, innovation, and transparency. We believe in creating long-term partnerships with our clients, grounded in trust and collaboration.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center" data-aos="fade-up">
+                <img src="https://source.unsplash.com/800x600/?teamwork" alt="Our Team" class="about-image mt-5">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2>Our Services</h2>
+                <p class="text-muted">Comprehensive digital solutions for your business</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-right">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h4>Web Development</h4>
+                        <p class="text-muted">Custom websites built with modern technologies</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-primary me-2"></i>Responsive Design</li>
+                            <li><i class="fas fa-check text-primary me-2"></i>SEO Optimized</li>
+                            <li><i class="fas fa-check text-primary me-2"></i>CMS Integration</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h4>Mobile Apps</h4>
+                        <p class="text-muted">Native and cross-platform mobile solutions</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-primary me-2"></i>iOS & Android</li>
+                            <li><i class="fas fa-check text-primary me-2"></i>React Native</li>
+                            <li><i class="fas fa-check text-primary me-2"></i>API Integration</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-4" data-aos="fade-left">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4>Digital Marketing</h4>
+                        <p class="text-muted">Data-driven marketing strategies</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-primary me-2"></i>SEO/SEM</li>
+                            <li><i class="fas fa-check text-primary me-2"></i>Social Media</li>
+                            <li><i class="fas fa-check text-primary me-2"></i>Analytics</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <div class="contact-section">
+                <div class="text-center mb-5" data-aos="fade-up">
+                    <h2>Contact Us</h2>
+                    <p class="text-muted">Get in touch to start your project</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-6" data-aos="fade-right">
+                        <form>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Your Name" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" class="form-control" placeholder="Email Address" required>
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control" rows="4" placeholder="Message" required></textarea>
+                            </div>
+                            <button class="btn btn-primary w-100">Send Message</button>
+                        </form>
+                    </div>
+                    <div class="col-md-6" data-aos="fade-left">
+                        <div class="h-100 bg-white p-4 rounded">
+                            <h5>Contact Information</h5>
+                            <ul class="list-unstyled mt-4">
+                                <li class="mb-3">
+                                    <i class="fas fa-map-marker-alt me-2 text-primary"></i>
+                                    123 Business Street, New York, NY
+                                </li>
+                                <li class="mb-3">
+                                    <i class="fas fa-phone me-2 text-primary"></i>
+                                    +1 (555) 123-4567
+                                </li>
+                                <li class="mb-3">
+                                    <i class="fas fa-envelope me-2 text-primary"></i>
+                                    contact@codecrafted.com
+                                </li>
+                            </ul>
+                            <div class="social-links mt-4">
+                                <a href="#" class="text-decoration-none me-3">
+                                    <i class="fab fa-facebook fa-lg text-primary"></i>
+                                </a>
+                                <a href="#" class="text-decoration-none me-3">
+                                    <i class="fab fa-twitter fa-lg text-primary"></i>
+                                </a>
+                                <a href="#" class="text-decoration-none">
+                                    <i class="fab fa-linkedin fa-lg text-primary"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4">
+        <div class="container text-center">
+            <p class="mb-0 text-muted">&copy; 2023 CodeCrafted. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                document.querySelector('.navbar').classList.add('navbar-scrolled');
+            } else {
+                document.querySelector('.navbar').classList.remove('navbar-scrolled');
+            }
+        });
+    </script>
+</body>
+
+</html>
